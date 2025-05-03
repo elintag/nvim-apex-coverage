@@ -1,0 +1,81 @@
+*apex-coverage.txt*    For Neovim version 0.8 and higher    Last change: 2025 May 03
+
+==============================================================================
+CONTENTS                                           *apex-coverage-contents*
+
+1. Introduction..................................|apex-coverage-introduction|
+2. Usage...........................................|apex-coverage-usage|
+3. Configuration...............................|apex-coverage-configuration|
+4. Commands......................................|apex-coverage-commands|
+5. Mappings......................................|apex-coverage-mappings|
+
+==============================================================================
+INTRODUCTION                                     *apex-coverage-introduction*
+
+`nvim-apex-coverage` is a Neovim plugin that fetches and displays Salesforce Apex code coverage information directly within the editor. It uses the `sf` CLI to query coverage data and displays it using Neovim's sign column.
+
+Requires:
+- Neovim >= 0.8
+- plenary.nvim
+- Salesforce CLI (`sf`) installed and authenticated to an org.
+
+==============================================================================
+USAGE                                                *apex-coverage-usage*
+
+Open an Apex class (`.cls`) or trigger (`.trigger`) file.
+
+Run the |:ApexCoverage| command (or use the default mapping |<leader>tc|) to fetch and display coverage. A menu will appear allowing you to select:
+- Total aggregated coverage.
+- Coverage specific to individual test methods.
+- An option to refresh the data from Salesforce.
+
+Covered lines are marked with one sign (default: `▎` with `DiffAdd` highlight).
+Uncovered lines are marked with another sign (default: `▎` with `DiffDelete` highlight).
+
+Run the |:ApexCoverageClean| command (or use the default mapping |<leader>tC|) to clear the coverage signs.
+
+==============================================================================
+CONFIGURATION                                  *apex-coverage-configuration*
+
+Configure the plugin by calling the `setup` function.
+
+Example configuration with default values:
+>lua
+require('apex-coverage').setup({
+  mappings = {
+    coverage = '<leader>tc', -- Mapping to show coverage selection
+    clean = '<leader>tC',    -- Mapping to clear coverage signs
+  }
+})
+<
+
+Options:
+  `mappings`: A table to override the default key mappings.
+    - `coverage`: Keymap for the |:ApexCoverage| command.
+    - `clean`: Keymap for the |:ApexCoverageClean| command.
+
+==============================================================================
+COMMANDS                                           *apex-coverage-commands*
+
+*:ApexCoverage*
+    Fetches coverage data for the current Apex class/trigger (if not already
+    cached) and displays a selection menu to choose which coverage details
+    (total or per-test method) to visualize using signs.
+
+*:ApexCoverageClean*
+    Removes all coverage signs placed by this plugin from the current buffer.
+
+==============================================================================
+MAPPINGS                                           *apex-coverage-mappings*
+
+Default mappings (can be changed via |apex-coverage-configuration|):
+
+`<leader>tc`
+    In normal mode, calls |:ApexCoverage|.
+
+`<leader>tC`
+    In normal mode, calls |:ApexCoverageClean|.
+
+
+vim:tw=78:ts=8:sw=4:sts=4:et:ft=help:norl:
+
