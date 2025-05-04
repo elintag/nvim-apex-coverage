@@ -254,18 +254,6 @@ function M.setup()
         force = true,
     })
 
-    -- Add leader tc shortcut for ApexCoverage
-    vim.keymap.set('n', '<leader>tc', ':ApexCoverage<CR>', {
-        desc = 'Show Apex code coverage for current class/trigger',
-        silent = true,
-    })
-
-    -- Add leader tC shortcut for ApexCoverageClean
-    vim.keymap.set('n', '<leader>tC', ':ApexCoverageClean<CR>', {
-        desc = 'Clear Apex code coverage signs',
-        silent = true,
-    })
-
     -- Merge user options with defaults
     local defaults = {
         mappings = {
