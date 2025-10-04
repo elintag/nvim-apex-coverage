@@ -131,8 +131,8 @@ local function highlight_coverage(coverage_data)
     end
 
     vim.cmd([[
-    sign define ApexCoveredLine text=▎ texthl=DiffAdd
-    sign define ApexUncoveredLine text=▎ texthl=DiffDelete
+    sign define ApexCoveredLine text=󰗠 texthl=Added
+    sign define ApexUncoveredLine text= texthl=Removed
   ]])
 
     -- Get covered and uncovered lines from the table

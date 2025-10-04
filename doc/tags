@@ -1,0 +1,9 @@
+:ApexCoverage	apex-coverage.txt	/*:ApexCoverage*
+:ApexCoverageClean	apex-coverage.txt	/*:ApexCoverageClean*
+apex-coverage-commands	apex-coverage.txt	/*apex-coverage-commands*
+apex-coverage-configuration	apex-coverage.txt	/*apex-coverage-configuration*
+apex-coverage-contents	apex-coverage.txt	/*apex-coverage-contents*
+apex-coverage-introduction	apex-coverage.txt	/*apex-coverage-introduction*
+apex-coverage-mappings	apex-coverage.txt	/*apex-coverage-mappings*
+apex-coverage-usage	apex-coverage.txt	/*apex-coverage-usage*
+apex-coverage.txt	apex-coverage.txt	/*apex-coverage.txt*
